@@ -1,0 +1,9 @@
+:root {
+    --primary: #FF9F43;
+    --danger: #EA2027;
+    --success: #27ae60;
+    --background: #FFFFFF;
+    --font-shade: #7c7c7c;
+    --primary-font: 'Quicksand', sans-serif;
+    --secondary-font: 'Balsamiq Sans', cursive;
+}

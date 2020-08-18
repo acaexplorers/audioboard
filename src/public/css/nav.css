@@ -1,0 +1,84 @@
+nav {
+    width: 100%;
+    display: flex;
+    height: 90px;
+    justify-content: space-between;
+    box-shadow: 0px 4px 21px 0px rgba(0,0,0,0.20);
+    background-color: white;
+}
+
+nav > .section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.center {
+    flex-basis: 70%;
+    justify-content: center !important;
+}
+
+.left {
+    flex-basis: 20%;
+    justify-content: flex-start !important;
+}
+
+.right {
+    flex-basis: 20%;
+    justify-content: center !important;
+}
+
+nav > ul > li {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: var(--secondary-font);
+    height: 100%;
+    justify-content: center;
+    flex-basis: 15%;
+    align-items: center;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+nav > ul > .lighter {
+    font-weight: lighter;
+}
+
+nav > ul > li > a:hover,
+nav > ul > li > div > a:hover,
+nav > ul > li > div > h6 > a:hover,
+nav > ul > li:hover,
+.change-language:hover {
+    color: var(--primary);
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.profile-section {
+    display: block; 
+    align-items: center;
+    font-size: 10pt;
+}
+
+.profile-section > img {
+    object-fit: cover;
+    border-radius: 50%;
+    background-position: 50% 50%;
+    width: 48px;
+    height: 48px;
+    margin: 0 10px 0 10px;
+}
+
+.profile-section > .language-selector > h1 {
+    text-transform: capitalize;
+    font-weight: bolder;
+    color: var(--primary);
+}
+

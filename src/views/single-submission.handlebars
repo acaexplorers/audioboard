@@ -1,0 +1,60 @@
+<div class="details-screen">
+    <div class="body-section">
+        <table>
+            <tr>
+                <td class="bold">
+                    Title
+                </td>
+                <td>
+                    {{title}}
+                </td>
+            </tr>
+            <tr>
+                <td class="bold">
+                    Author
+                </td>
+                <td>
+                    {{author}}
+                </td>
+            </tr>
+            <tr>
+                <td class="bold">
+                    Tags
+                </td>
+                <td>
+                    {{tags}}
+                </td>
+            </tr>
+            <tr>
+                <td class="bold">
+                    Content
+                </td>
+                <td>
+                    {{content}}
+                </td>
+            </tr>
+            <tr>
+                <td class="bold">
+                    Notes
+                </td>
+                <td>
+                    {{notes}}
+                </td>
+            </tr>
+        </table>
+        {{#if admin}}
+        <div class="split">
+            <button
+                class="split-container success"
+                onclick="navigateTo('/accept/{{id}}')">
+                Accept
+            </button>
+            <button
+                class="split-container danger"
+                onclick="navigateTo('/reject/{{id}}')">
+                Reject
+            </button>
+        </div>
+        {{/if}}
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vocabulary Exchange</title>
+    <link href="/static/css/main.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        {{#if loggedIn}}
+        <div class="section left profile-section">
+            <img src="https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/60591f1d0d92c56bd63549a9f08d940d-319055601591759000.63027/6B333DF3-EB31-4788-B063-80AA7648624C" class="profile-image"/>
+            <div class="language-selector" class="invert-change-language">
+                <h1>{{username}}</h1>
+                {{#if admin}}
+                ADMIN
+                {{/if}}
+                <h3 class="change-language">Change</h3>
+            </div>
+        </div>
+        <ul class="section center">
+            <li><a href="/vocabulary-request">Request</a></li>
+            <li><a href="/queue">Queue</a></li>
+        </ul>
+        <ul class="section right">
+            {{#if admin}}
+            <li>
+                <div class="language-selector">
+                    <a href="/dashboard">Dashboard</a>
+                    <h6>
+                        <a href="logout">Logout</a>
+                    </h6>
+                </div>
+            </li>
+            {{else}}
+            <li class="lighter"><a href="logout">Logout</a></li>
+            {{/if}}
+        </ul>
+        {{else}}
+        <ul class="section left"></ul>
+        <ul class="section center"></ul>
+        <ul class="section right">
+            <li><a href="/register">Register</a></li>
+        </ul>
+        {{/if}}
+    </nav>
+    {{#each alerts}}
+    <div class="alerts-{{type}}"> 
+        {{message}}
+    </div>
+    {{/each}}
+    <div class="content">
+        {{{body}}}
+    </div>
+    <script src="/static/js/navigation.js"></script>
+</body>
+</html>

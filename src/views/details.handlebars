@@ -1,0 +1,65 @@
+<div class="details-screen">
+    <div class="body-section">
+        <table>
+            <tr>
+                <td class="bold">
+                    Title
+                </td>
+                <td>
+                    {{title}}
+                </td>
+            </tr>
+            <tr>
+                <td class="bold">
+                    Author
+                </td>
+                <td>
+                    {{author}}
+                </td>
+            </tr>
+            <tr>
+                <td class="bold">
+                    Tags
+                </td>
+                <td>
+                    {{tags}}
+                </td>
+            </tr>
+            <tr>
+                {{#if content}}
+                <td class="bold">
+                    Content
+                </td>
+                <td>
+                    {{content}}
+                </td>
+                {{else}}
+                <td class="bold">
+                    Audio
+                </td>
+                <td>
+                    <audio src="https:///audios/{{audiofilepath}}"/>
+                </td>
+                {{/if}}
+            </tr>
+            <tr>
+                <td class="bold">
+                    Notes
+                </td>
+                <td>
+                    {{notes}}
+                </td>
+            </tr>
+        </table>
+        <button onclick="navigateTo('/vocabulary-post/{{id}}')">
+            Post a Submission
+        </button>
+        {{#if admin}}
+        <button
+            class="danger"
+            onclick="navigateTo('/delete/{{id}}')">
+            Delete Request
+        </button>
+        {{/if}}
+    </div>
+</div>

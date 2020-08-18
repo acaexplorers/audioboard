@@ -1,0 +1,55 @@
+<h1>Vocabulary Board</h1>
+<table>
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                English
+            </th>
+            <th>
+                Spanish
+            </th>
+            <th>
+                English Audio
+            </th>
+            <th>
+                Spanish Audio
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each words}}
+        <tr>
+            <td>
+                {{id}}
+            </td>
+            <td>
+                {{english}}
+            </td>
+            <td>
+                {{spanish}}
+            </td>
+            <td>
+                {{#if english_available}}
+                <a href="/audio/english/{{id}}">English Audio</a>
+                {{else if english_requested}}
+                <a href="/vocabulary-post/{{id}}">Post</a>
+                {{else}}
+                <a href="/vocabulary-request/{{id}}">Request</a>
+                {{/if}}
+            </td>
+            <td>
+                {{#if spanish_available}}
+                <a href="/audio/spanish/{{id}}">Spanish Audio</a>
+                {{else if spanish_requested}}
+                <a href="/vocabulary-post/{{id}}">Post</a>
+                {{else}}
+                <a href="/vocabulary-request/{{id}}">Request</a>
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

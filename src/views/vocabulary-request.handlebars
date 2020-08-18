@@ -1,0 +1,85 @@
+<div class="vocabulary-request">
+    {{#if is_first_step}}
+    <div class="type-selection">
+        <form action="?action=audio" method="POST">
+            <input type="hidden" name="step" value="one"/>
+            <input type="hidden" name="selection" value="audio"/>
+            <button class="outline card">
+                <img src="" alt="Microphone Icon"/>
+                <h4><b>Text</b> To Speech</h4>
+            </button>
+        </form>
+        <form action="?action=transcription" method="POST">
+            <input type="hidden" name="step" value="one"/>
+            <input type="hidden" name="selection" value="trans"/>
+            <button class="outline card">
+                <img src="" alt="Transcription Icon"/>
+                <h4><b>Speech</b> To Text</h4>
+        </form>
+    </div>
+</div>
+{{else}}
+{{#if audio_requested}}
+<form method="POST" action="?action=audio">
+
+    <label for="target-language">Target Language *</label>
+    <select name="target-language" required>
+        <option value="en">English</option>
+        <option value="es">Espanol</option>
+    </select>
+
+    <label for="title">Title *</label>
+    <input type="text" name="title" required>
+
+    <label for="text">Text *</label>
+    <textarea name="text" required></textarea>
+
+    <label for="notes">Notes</label>
+    <textarea name="notes"></textarea>
+
+    <label for="text">Tags</label>
+    <input type="text" name="tags" onkeyup="this.value = this.value.toLowerCase();">
+
+    <input type="hidden" name="type" value="tts"/>
+    <input type="submit" value="Request">
+</form>
+{{else}}
+<form
+    method="POST"
+    action="?action=transcription"
+    encType="multipart/form-data">
+
+    <label for="target-language">Language *</label>
+    <select name="target-language" required>
+        <option value="en">English</option>
+        <option value="es">Espanol</option>
+    </select>
+
+    <label for="title">Title *</label>
+    <input type="text" name="title" required>
+
+    <label for="text">Audio *</label>
+    <input type="file" name="audio" accept=".mp3" required>
+
+    <label for="notes">Notes</label>
+    <textarea name="notes"></textarea>
+
+    <label for="text">Tags</label>
+    <input type="text" name="tags" onkeyup="this.value = this.value.toLowerCase();">
+
+    <input type="hidden" name="type" value="stt"/>
+    <input type="submit" value="Request">
+</form>
+{{/if}}
+{{/if}}
+
+<div class="steps">
+    {{#if is_first_step}}
+    <div class="step-dot active"></div>
+    <div class="step-dot"></div>
+    {{else}}
+    <div class="step-dot"></div>
+    <div class="step-dot active"></div>
+    {{/if}}
+</div>
+</div>

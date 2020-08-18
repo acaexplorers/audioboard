@@ -1,0 +1,17 @@
+<div class="queue-page">
+    <ul class="queue-list">
+        {{#each queueItems}}
+        <li class="queue-list-item"
+            onclick="navigateTo('/details/{{id}}')">
+            <div class="word-section">
+                <div><b>{{words}}</b></div>
+                <div>Words</div>
+            </div>
+            <div class="author-information">
+                <h2>{{title}}</h2>
+                <p>by <b class="primary">{{author}}</b></p>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</div>

@@ -1,0 +1,71 @@
+<div class="dashboard-screen non-center">
+    <div class="padded">
+        <h1 class="regular-h1">Dashboard</h1>
+        <h3 class="subheading">Overview</h3>
+        <table>
+            <thead>
+                <th>
+                    Type
+                </th>
+                <th>
+                    Amount
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Requests
+                    </td>
+                    <td>
+                        {{requests.length}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Submissions
+                    </td>
+                    <td>
+                        {{submissions.length}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="split">
+            <div class="split-container">
+                <h3 class="subheading">Open submissions</h3>
+                <ul class="queue-list">
+                    {{#each submissions}}
+                    <li class="queue-list-item"
+                        onclick="navigateTo('/single-submission/{{id}}')">
+                        <div class="word-section">
+                            <div><b>{{words}}</b></div>
+                            <div>Words</div>
+                        </div>
+                        <div class="author-information">
+                            <h2>{{title}}</h2>
+                            <p>by <b class="primary">{{author}}</b></p>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="split-container">
+                <h3 class="subheading">Open requests</h3>
+                <ul class="queue-list split-container">
+                    {{#each requests}}
+                    <li class="queue-list-item"
+                        onclick="navigateTo('/details/{{id}}')">
+                        <div class="word-section">
+                            <div><b>{{words}}</b></div>
+                            <div>Words</div>
+                        </div>
+                        <div class="author-information">
+                            <h2>{{title}}</h2>
+                            <p>by <b class="primary">{{author}}</b></p>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>

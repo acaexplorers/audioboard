@@ -1,0 +1,17 @@
+<div class="vocabulary-request">
+    {{#if tts}}
+    <form method="POST"
+          action="#"
+          encType="multipart/form-data">
+        <label for="audio">Audio</label>
+        <input type="file" name="audio" accept=".mp3"/>
+        {{else}}
+        <form method="POST" action="#">
+            <label for="content">Content</label>
+            <textarea name="content"></textarea>
+            {{/if}}
+            <input type="hidden" name="request_id" value="{{id}}"/>
+            <input type="hidden" name="tts" value="{{tts}}"/>
+            <input type="submit" value="Post">
+        </form>
+</div>
